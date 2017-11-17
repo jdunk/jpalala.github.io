@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Discover Dries&#039; thoughts on the open web, the future of digital, technology startups, Open Source and Drupal." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dries Buytaert: creator of Drupal and co-founder of Acquia" />
+<meta name="twitter:site" content="@Dries" />
+<meta name="twitter:description" content="Discover Dries&#039; thoughts on the open web, the future of digital, technology startups, Open Source and Drupal." />
+<meta name="twitter:image" content="https://dri.es/sites/all/themes/buytaert8/img/logo-sq.jpg" />
+<meta name="og:url" content="https://dri.es/" />
+<meta name="og:type" content="article" />
+<meta name="og:title" content="Dries Buytaert: creator of Drupal and co-founder of Acquia" />
+<meta name="og:locale" content="en_US" />
+<meta name="og:description" content="Discover Dries&#039; thoughts on the open web, the future of digital, technology startups, Open Source and Drupal." />
+<meta name="og:image" content="https://dri.es/sites/all/themes/buytaert8/img/logo-sq.jpg" />
+<link rel="shortcut icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+
+  <title>Home | Dries Buytaert</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,400italic,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/sites/default/files/css/css_gnT-TI87qkq7B5UnkII4GLUad4IQJoCwkn4snOBqRas.css?oxtqae" media="all" />
+<link rel="stylesheet" href="/sites/default/files/css/css_tYtEQIRpIbRH088K-EHTOXIkM9PUB8pF38Mey6OW3Ko.css?oxtqae" media="all" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  <meta name="google-site-verification" content="f6jt8eNRMJ4MpQ-j3cTOxfBFuVO0C_xsjBEv1wjskRg" />
+</head>
+<body>
+  <div id="skip-link">
+    <a href="#main-content" class="visually-hidden element-invisible element-focusable">Skip to main content</a>
+  </div>
+  
+    <div class="dialog-off-canvas__main-canvas" data-off-canvas-main-canvas >
+    
+<header class="page-header">
+
+        <div>
+          <div class="page-header__primary clearfix">
+      <div class="container">
+        <h1 class="page-header__title"><a href="/" class="page-header__title-link" title="Homepage of Dries Buytaert">Dries Buytaert</a></h1>
+      </div>
+    </div>
+    <div class="page-header__secondary clearfix">
+    <div class="container">
+      <img src="/sites/all/themes/buytaert8/img/logo-sq.jpg" alt="Dries Buytaert" class="page-header__logo">
+              <p class="page-header__tagline">On digital experiences, Open Source, startups &amp; the future</p>
+          </div>
+  </div>
+
+  </div>
+
+  
+      <nav class="page-header__navigation clearfix">
+      <div class="container">
+        <button class="page-header__navigation__trigger" type="button"><svg class="icon__menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path class="icondefault icon__menu__upper" d="M5 5h22v4H5z"/><path class="icondefault icon__menu__middle" d="M5 14h22v4H5z"/><path class="icondefault icon__menu__lower" d="M5 23h22v4H5z"/></svg></button>
+        <div class="page-header__navigation__content">
+            <div>
+    <nav role="navigation" aria-labelledby="block-mainmenu-menu" id="block-mainmenu" class="settings-tray-editable page-header__navigation__block" data-drupal-settingstray="editable">
+            
+  <h2 class="visually-hidden" id="block-mainmenu-menu">Main menu</h2>
+  
+
+        
+              <ul itemscope itemtype="https://www.schema.org/SiteNavigationElement" class="page-header__navigation__menu">
+                                              <li itemprop="name" class="page-header__navigation__menu-item is-active" data-drupal-link-system-path="&lt;front&gt;">
+        <a href="/" title="" itemprop="url" class="page-header__navigation__menu-item__link is-active" data-drupal-link-system-path="&lt;front&gt;">Blog</a>
+              </li>
+                            <li itemprop="name" class="page-header__navigation__menu-item" data-drupal-link-system-path="photos">
+        <a href="/photos" itemprop="url" class="page-header__navigation__menu-item__link" data-drupal-link-system-path="node/3">Photos</a>
+              </li>
+                            <li itemprop="name" class="page-header__navigation__menu-item" data-drupal-link-system-path="about">
+        <a href="/about" itemprop="url" class="page-header__navigation__menu-item__link" data-drupal-link-system-path="node/1">About</a>
+              </li>
+                            <li itemprop="name" class="page-header__navigation__menu-item" data-drupal-link-system-path="contact">
+        <a href="/contact" title="" itemprop="url" class="page-header__navigation__menu-item__link" data-drupal-link-system-path="contact">Contact</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div class="search-block-form settings-tray-editable page-header__navigation__block" data-drupal-selector="search-block-form" id="block-searchform" role="search" data-drupal-settingstray="editable">
+  
+    
+      <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+      <label for="edit-keys" class="visually-hidden">Search</label>
+        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search" placeholder="Search" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </nav>
+  
+</header>
+
+  <div class="content__primary container">
+        <div class="content__primary__body clearfix">
+      <div class="pad">
+
+        
+        
+        
+          <div>
+    
+<div id="block-buytaert7-system-main">
+  
+    
+      <div class="views-element-container"><div class="js-view-dom-id-0da9a7b4e4f8705991d09b4e8cda5a57e9e3ffaa7dc87a82924bf11c167e39dd">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row">
+    <!-- Blog post with schema.org meta data -->
+<article itemscope itemtype="https://schema.org/BlogPosting" itemref="dries">
+<div class="entry clearfix">
+  <header>
+        <h2 itemprop="name headline"><a href="/an-update-on-the-layout-initiative-for-drupal-8-4-8-5"><span>An update on the Layout Initiative for Drupal 8.4/8.5</span>
+</a></h2>
+        <link itemprop="url" href="https://dri.es/an-update-on-the-layout-initiative-for-drupal-8-4-8-5" />
+        <meta itemprop="description" content="Want to know what has been happening with the Layout Initiative in Drupal? Read my update." />
+        <meta itemprop="datePublished" content="2017-11-14T21:57:53-05:00" />
+    <meta itemprop="dateModified" content="2017-11-15T07:31:00-05:00" />
+  </header>
+
+  <div itemprop="articleBody" class="entry__content has-meta">
+    
+            <div><p>Now Drupal 8.4 is released, and Drupal 8.5 development is underway, it is a good time to give an update on what is happening with Drupal's Layout Initiative.</p>
+<h3>8.4: Stable versions of layout functionality</h3>
+<p>Traditionally, site builders have used one of two layout solutions in Drupal: <a href="https://www.drupal.org/project/panelizer">Panelizer</a> and <a href="https://www.drupal.org/project/panels">Panels</a>. Both are contributed modules outside of Drupal core, and both achieved stable releases in the middle of 2017. Given the popularity of these modules, having stable releases closed a major functionality gap that prevented people from building sites with Drupal 8.</p>
+<h3>8.4: A Layout API in core</h3>
+<p>The Layout Discovery module added in Drupal 8.3 core has now been marked stable. This module adds a <a href="https://www.drupal.org/docs/8/api/layout-api">Layout API</a> to core. Both the aforementioned Panelizer and Panels modules have already adopted the new Layout API with their 8.4 release. A unified Layout API in core eliminates fragmentation and encourages collaboration.</p>
+<h3>8.5+: A Layout Builder in core</h3>
+<p>Today, Drupal's layout management solutions exist as contributed modules. Because creating and building layouts is expected to be out-of-the-box functionality, we're working towards adding layout building capabilities to Drupal core. </p>
+<p>Using the Layout Builder, you start by selecting predefined layouts for different sections of the page, and then populate those layouts with one or more blocks. I showed the Layout Builder in <a href="https://dri.es/state-of-drupal-presentation-september-2017">my DrupalCon Vienna keynote</a> and it was really well received:</p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Hx4EEzI7aNE?rel=0" frameborder="0" allowfullscreen></iframe><p></p>
+<h3>8.5+: Use the new Layout Builder UI for the Field Layout module</h3>
+<p>One of the nice improvements that went in Drupal 8.3 was the <a href="https://www.youtube.com/watch?v=mJBHQJFHqws">Field Layout module</a>, which provides the ability to apply pre-defined layouts to what we call "entity displays". Instead of applying layouts to individual pages, you can apply layouts to types of content regardless of what page they are displayed on. For example, you can create a content type 'Recipe' and visually lay out the different fields that make up a recipe. Because the layout is associated with the recipe rather than with a specific page, recipes will be laid out consistently across your website regardless of what page they are shown on.</p>
+<p>The basic functionality is already included in Drupal core as part of the experimental Fields Layout module. The goal for Drupal 8.5 is to stabilize the Fields Layout module, and to improve its user experience by using the new Layout Builder. Eventually, designing the layout for a recipe could look like this:</p>
+<p><figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+ <img itemprop="contentUrl" src="https://dri.es/files/images/blog/drupal-8-5-field-layouts-prototype.jpg" width="742" height="1311" alt="Drupal field layouts prototype" title="Drupal field layouts prototype" class="image-no-resize" />
+ <link itemprop="url" href="https://dri.es/files/images/blog/drupal-8-5-field-layouts-prototype.jpg" />
+ <meta itemprop="width" content="742" />
+ <meta itemprop="height" content="1311" />
+</figure>
+</p>
+<p>Layouts remains a strategic priority for Drupal 8 as it was the second most important site builder priority identified in my <a href="https://dri.es/state-of-drupal-presentation-may-2016">2016 State of Drupal survey</a>, right behind Migrations. I'm excited to see the work already accomplished by the Layout team, and look forward to seeing their progress in Drupal 8.5! If you want to help, check out the <a href="https://www.drupal.org/node/2884601">Layout Initiative roadmap</a>.</p>
+<p><em>Special thanks to <a href=""https://www.drupal.org/u/webchick>Angie Byron</a> for contributions to this blog post, to <a href="https://www.drupal.org/u/timplunkett">Tim Plunkett</a> and <a href="https://www.drupal.org/u/eclipsegc">Kris Vanderwater</a> for their feedback during the writing process, and to <a href="https://www.drupal.org/u/dyannenova">Emilie Nouveau</a> for the screenshot and video contributions.</em></p>
+</div>
+      
+  </div>
+      <footer class="entry__meta">
+              <div class="entry__meta__date">
+          <time datetime="2017-11-14T21:57:53-05:00"><a href="/an-update-on-the-layout-initiative-for-drupal-8-4-8-5" class="links"><span>November 14, 2017</span></a></time>
+        </div>
+                              <div class="entry__meta__comments"><ul class="links inline"><li class="comment-comments"><a href="/an-update-on-the-layout-initiative-for-drupal-8-4-8-5#comments" title="Jump to the first comment." hreflang="en">3 comments</a></li></ul></div>
+                                    <div class="entry__meta__terms">
+          <ul itemprop="keywords" class="links inline">
+                                          <li><a href="/tag/drupal" hreflang="en">Drupal</a></li>
+                                                                                        </ul>
+        </div>
+            <ul class="entry__meta__links">
+        <li class="entry__meta__links-twitter"><a href="https://twitter.com/intent/tweet?text=An%20update%20on%20the%20Layout%20Initiative%20for%20Drupal%208.4%2F8.5&amp;url=http%3A//dri.es/an-update-on-the-layout-initiative-for-drupal-8-4-8-5&amp;via=dries">Share on Twitter</a></li>
+        <li class="entry__meta__links-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//dri.es/an-update-on-the-layout-initiative-for-drupal-8-4-8-5">Share on Facebook</a></li>
+        <li class="entry__meta__links-linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&title=An%20update%20on%20the%20Layout%20Initiative%20for%20Drupal%208.4%2F8.5&amp;url=http%3A//dri.es/an-update-on-the-layout-initiative-for-drupal-8-4-8-5">Share on LinkedIn</a></li>
+      </ul>
+
+    </footer>  
+  
+</div>
+</article>
+
+  </div>
+    <div class="views-row">
+    <!-- Blog post with schema.org meta data -->
+<article itemscope itemtype="https://schema.org/BlogPosting" itemref="dries">
+<div class="entry clearfix">
+  <header>
+        <h2 itemprop="name headline"><a href="/mike-sullivan-joins-acquia-as-ceo"><span>Mike Sullivan joins Acquia as CEO</span>
+</a></h2>
+        <link itemprop="url" href="https://dri.es/mike-sullivan-joins-acquia-as-ceo" />
+        <meta itemprop="description" content="After a 6-month search, Michael Sullivan will be joining Acquia as its CEO" />
+        <meta itemprop="datePublished" content="2017-11-13T10:59:13-05:00" />
+    <meta itemprop="dateModified" content="2017-11-13T11:08:00-05:00" />
+  </header>
+
+  <div itemprop="articleBody" class="entry__content has-meta">
+    
+            <div><p>Today, I am excited to announce that <a href="https://www.acquia.com/about-us/newsroom/press-releases/acquia-names-michael-sullivan-chief-executive-officer">Michael Sullivan will be joining Acquia as its CEO</a>.</p>
+
+<h3>The search for a new CEO</h3>
+
+<p>Last spring, Tom Erickson announced that he was stepping down as Acquia's CEO. For over eight years, Tom and I have been working side-by-side to build and run Acquia. I've been lucky to have Tom as my partner as he is one of the most talented leaders I know. When Tom announced he'd be stepping down as Acquia's CEO, <a href="https://dri.es/acquia-next-phase">finding a new CEO became my top priority for Acquia</a>. 
+
+For six months, the search consumed a good deal of my time. I was supported by a search committee drawn from Acquia's board of directors, including Rich D'Amore, Tom Bogan, and Michael Skok. Together, we screened over 140 candidates and interviewed 10 in-depth. Finding the right candidate was hard work and time consuming, but <a href="https://mjskok.com/3-tips-for-hiring-leaders-and-1-essential-quality-for-everyone">we kept the bar high at all times</a>. As much as I enjoyed meeting so many great candidates and hearing their perspective on our business, I'm glad that the search is finally behind me.</p>
+
+<h3>The right fit for Acquia</h3>
+
+<p>Finding a business partner is like dating; you have to get to know each other, build trust, and see if there is a match. Identifying and recruiting the best candidate is difficult because unlike dating, you have to consider how the partnership will also impact your team, customers, partners, and community. Once I got to know Mike, it didn't take me long to realize how he could help scale Acquia and help make our customers and partners successful. I also realized how much I would enjoy working with him. The fit felt right.</p>
+
+<p>With 25 years of senior leadership in SaaS, enterprise content management and content governance, Mike is well prepared to lead our business. Mike will join Acquia from Micro Focus, where he participated in the merger of Micro Focus with Hewlett Packard Enterprise's software business. The combined company became the world's seventh largest pure-play software company and the largest UK technology firm listed on the London Stock Exchange. At Micro Focus and Hewlett Packard Enterprise, Mike was the Senior Vice President and General Manager for Software-as-a-Service and was responsible for managing over 30 SaaS products.</p>
+
+<p>This summer, I shared that Acquia expanded its focus <a href="https://dri.es/the-evolution-of-acquia-product-strategy">from website management to data-driven customer journeys</a>. We extended the capabilities of the Acquia Platform with journey orchestration, commerce integrations and digital asset management tools. The fact that Mike has so much experience running a diverse portfolio of SaaS products is something I really valued. Mike's expertise can guide us in our transformation from a single product company to a multi-product company.</p> 
+
+<h3>Creating a partnership</h3>
+
+<p>For many years, I have woken up everyday determined to set a vision for the future, formulate a strategy to achieve that vision, and help my fellow Acquians figure out how to achieve that vision.</p>
+
+<p>One of the most important things in finding a partner and CEO for Acquia was having a shared vision for the future and an understanding of the importance of cloud, Open Source, data-driven experiences, customer success and more. This was very important to me as I could not imagine working with a partner who isn't passionate about these same things. It is clear that Mike shares this vision and is excited about Acquia's future.</p> 
+
+<p>Furthermore, Mike's operational strength and enterprise experience will be a natural complement to my focus on vision and product strategy. His expertise will allow Acquia to accelerate its mission to "build the universal platform for the world's greatest digital experiences."</p>
+
+<h3>Formalizing my own role</h3>
+
+<p>In addition to Mike joining Acquia as CEO, my role will be elevated to Chairman. I will also continue in my position as Acquia CTO. My role has always extended beyond what is traditionally expected of a CTO; my responsibilities have bridged products and engineering, fundraising, investor relations, sales and marketing, resource allocation, and more. Serving as Chairman will formalize the various responsibilities I've taken on over the past decade. I'm also excited to work with Mike because it is an opportunity for me to learn from him and grow as a leader.</p> 
+
+<h3> Acquia's next decade</h3>
+
+<p>The web has the power to change lives, educate the masses, create new economies, disrupt business models and make the world smaller in the best of ways. Digital will continue to change every industry, every company and every life on the planet. The <a href="https://dri.es/acquia-first-decade-the-founding-story">next decade</a> holds enormous promise for Acquia and Drupal because of what the power of digital holds for business and society at large. We are uniquely positioned to deliver the benefits of open source, cloud and data-driven experiences to help organizations succeed in an increasingly complex digital world.</p> 
+
+<p>I'm excited to welcome Mike to Acquia as its CEO because I believe he is the right fit for Acquia, has the experience it takes to be our CEO and will be a great business partner to bring Acquia's vision to life. <em>Welcome to the team, Mike!</em></p></div>
+      
+  </div>
+      <footer class="entry__meta">
+              <div class="entry__meta__date">
+          <time datetime="2017-11-13T10:59:13-05:00"><a href="/mike-sullivan-joins-acquia-as-ceo" class="links"><span>November 13, 2017</span></a></time>
+        </div>
+                              <div class="entry__meta__comments"><ul class="links inline"><li class="comment-add"><a href="/mike-sullivan-joins-acquia-as-ceo#comment-form" title="Share your thoughts and opinions." hreflang="en">Add new comment</a></li></ul></div>
+                                    <div class="entry__meta__terms">
+          <ul itemprop="keywords" class="links inline">
+                                          <li><a href="/tag/acquia" hreflang="en">Acquia</a></li>
+                              <li><a href="/tag/drupal" hreflang="en">Drupal</a></li>
+                                                                                        </ul>
+        </div>
+            <ul class="entry__meta__links">
+        <li class="entry__meta__links-twitter"><a href="https://twitter.com/intent/tweet?text=Mike%20Sullivan%20joins%20Acquia%20as%20CEO&amp;url=http%3A//dri.es/mike-sullivan-joins-acquia-as-ceo&amp;via=dries">Share on Twitter</a></li>
+        <li class="entry__meta__links-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//dri.es/mike-sullivan-joins-acquia-as-ceo">Share on Facebook</a></li>
+        <li class="entry__meta__links-linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&title=Mike%20Sullivan%20joins%20Acquia%20as%20CEO&amp;url=http%3A//dri.es/mike-sullivan-joins-acquia-as-ceo">Share on LinkedIn</a></li>
+      </ul>
+
+    </footer>  
+  
+</div>
+</article>
+
+  </div>
+    <div class="views-row">
+    <!-- Blog post with schema.org meta data -->
+<article itemscope itemtype="https://schema.org/BlogPosting" itemref="dries">
+<div class="entry clearfix">
+  <header>
+        <h2 itemprop="name headline"><a href="/an-update-on-the-media-initiative-for-drupal-8-4-8-5"><span>An update on the Media Initiative for Drupal 8.4/8.5</span>
+</a></h2>
+        <link itemprop="url" href="https://dri.es/an-update-on-the-media-initiative-for-drupal-8-4-8-5" />
+        <meta itemprop="description" content="Want to know what has been happening with the Media Initiative in Drupal? Read my update." />
+        <meta itemprop="datePublished" content="2017-11-10T06:54:23-05:00" />
+    <meta itemprop="dateModified" content="2017-11-14T21:52:47-05:00" />
+  </header>
+
+  <div itemprop="articleBody" class="entry__content has-meta">
+    
+            <div><p>In my blog post, "<a href="https://dri.es/a-plan-for-media-management-in-drupal-8">A plan for media management in Drupal 8</a>", I talked about some of the challenges with media in Drupal, the hopes of end users of Drupal, and the plan that the team working on the Media Initiative was targeting for future versions of Drupal 8.  That blog post is one year old today. Since that time we released both Drupal 8.3 and Drupal 8.4, and Drupal 8.5 development is in full swing. In other words, it's time for an update on this initiative's progress and next steps.</p>
+<h3>8.4: A Media API in core</h3>
+<p>Drupal 8.4 introduced a new Media API to core. For site builders, this means that Drupal 8.4 ships with the new <a href="https://www.drupal.org/docs/8/core/modules/media/overview">Media module</a> (albeit still hidden from the UI, pending necessary user experience improvements), which is an adaptation of the <a href="https://www.drupal.org/project/media_entity">contributed Media Entity module</a>. The new Media module provides a "base media entity".  Having a "base media entity" means that all media assets — local images, PDF documents, YouTube videos, tweets, and so on — are revisable, extendable (<em>fieldable</em>), translatable and much more.  It allows all media to be treated in a common way, regardless of where the media resource itself is stored. For end users, this translates into a more cohesive content authoring experience; you can use consistent tools for managing images, videos, and other media rather than different interfaces for each media type.  </p>
+<h3>8.4+: Porting contributed modules to the new Media API</h3>
+<p>The <a href="https://www.drupal.org/project/media_entity">contributed Media Entity module</a> was a "foundational module" used by <a href="https://www.drupal.org/node/2860796">a large number of other contributed modules</a>. It enables Drupal to integrate with <a href="https://www.drupal.org/project/media_entity_pinterest">Pinterest</a>, <a href="https://www.drupal.org/project/media_entity_vimeo">Vimeo</a>, <a href=""https://drupal.org/project/media_entity_instagram>Instagram</a>, <a href="https://drupal.org/project/media_entity_twitter">Twitter</a> and much more.  The next step is for all of these modules to adopt the new Media module in core. The required changes are laid out in the API change record, and typically only require a couple of hours to complete. The sooner these modules are updated, the sooner Drupal's rich media ecosystem can start benefitting from the new API in Drupal core. This is a great opportunity for intermediate contributors to pitch in.</p>
+<h3>8.5+: Add support for remote video in core</h3>
+<p>As proof of the power of the new Media API, the team is hoping to bring in support for remote video using the <a href="https://oembed.com">oEmbed format</a>.  This allows content authors to easily add e.g. YouTube videos to their posts. This has been a long-standing gap in Drupal's out-of-the-box media and asset handling, and would be a nice win.</p>
+<h3>8.6+: A Media Library in core</h3>
+<p>The top two requested features for the content creator persona are richer image and media integration and <a href="https://en.wikipedia.org/wiki/Digital_asset_management">digital asset management</a>.  </p>
+<p><figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+ <img itemprop="contentUrl" src="https://dri.es/files/images/blog/2016-state-of-drupal-survey-top-content-author-improvements.jpg" width="742" height="450" alt="The top content author improvements for Drupal" title="2016 State of Drupal survey: top content author improvements" class="image-no-resize" />
+ <figcaption itemprop="caption"><em>The results of the <a href="https://dri.es/state-of-drupal-presentation-may-2016">State of Drupal 2016 survey</a> show the importance of the Media Initiative for content authors.
+</em></figcaption><br />
+ <link itemprop="url" href="https://dri.es/files/images/blog/2016-state-of-drupal-survey-top-content-author-improvements.jpg" />
+ <meta itemprop="width" content="742" />
+ <meta itemprop="height" content="450" />
+</figure>
+</p>
+<p>With a Media Library content authors can select pre-existing media from a library and easily embed it in their posts.  Having a Media Library in core would be very impactful for content authors as it helps with both these feature requests.  </p>
+<p>During the 8.4 development cycle, a lot of great work was done to prototype the Media Library discussed in <a href="https://dri.es/a-plan-for-media-management-in-drupal-8">my previous Media Initiative blog post</a>.  I was able to show that progress in <a href="https://dri.es/state-of-drupal-presentation-september-2017">my DrupalCon Vienna keynote</a>:</p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/S82paYMycNE?rel=0" frameborder="0" allowfullscreen></iframe><p></p>
+<p>The Media Library work uses the new Media API in core.  Now that the new Media API landed in Drupal 8.4 we can start focusing more on the Media Library.  Due to bandwidth constraints, we don't think the Media Library will be ready in time for the Drupal 8.5 release. If you want to help contribute time or funding to the development of the Media Library, have a look at the <a href="https://www.drupal.org/node/2825215">roadmap of the Media Initiative</a> or <a href="https://dri.es/contact">let me know</a> and I'll get you in touch with the team behind the Media Initiative.</p>
+<p><em>Special thanks to <a href="https://www.drupal.org/u/webchick">Angie Byron</a> for contributions to this blog post and to <a href="https://www.drupal.org/u/slashrsm">Janez Urevc</a>, <a href="https://www.drupal.org/u/seanb">Sean Blommaert</a>, <a href="https://www.drupal.org/u/marcoscano">Marcos Cano Miranda</a>, <a href="https://www.drupal.org/u/phenaproxima">Adam G-H</a> and <a href="https://www.drupal.org/u/g%C3%A1bor-hojtsy">Gábor Hojtsy</a> for their feedback during the writing process.</em></p>
+</div>
+      
+  </div>
+      <footer class="entry__meta">
+              <div class="entry__meta__date">
+          <time datetime="2017-11-10T06:54:23-05:00"><a href="/an-update-on-the-media-initiative-for-drupal-8-4-8-5" class="links"><span>November 10, 2017</span></a></time>
+        </div>
+                              <div class="entry__meta__comments"><ul class="links inline"><li class="comment-add"><a href="/an-update-on-the-media-initiative-for-drupal-8-4-8-5#comment-form" title="Share your thoughts and opinions." hreflang="en">Add new comment</a></li></ul></div>
+                                    <div class="entry__meta__terms">
+          <ul itemprop="keywords" class="links inline">
+                                          <li><a href="/tag/drupal" hreflang="en">Drupal</a></li>
+                                                                                        </ul>
+        </div>
+            <ul class="entry__meta__links">
+        <li class="entry__meta__links-twitter"><a href="https://twitter.com/intent/tweet?text=An%20update%20on%20the%20Media%20Initiative%20for%20Drupal%208.4%2F8.5&amp;url=http%3A//dri.es/an-update-on-the-media-initiative-for-drupal-8-4-8-5&amp;via=dries">Share on Twitter</a></li>
+        <li class="entry__meta__links-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//dri.es/an-update-on-the-media-initiative-for-drupal-8-4-8-5">Share on Facebook</a></li>
+        <li class="entry__meta__links-linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&title=An%20update%20on%20the%20Media%20Initiative%20for%20Drupal%208.4%2F8.5&amp;url=http%3A//dri.es/an-update-on-the-media-initiative-for-drupal-8-4-8-5">Share on LinkedIn</a></li>
+      </ul>
+
+    </footer>  
+  
+</div>
+</article>
+
+  </div>
+    <div class="views-row">
+    <!-- Blog post with schema.org meta data -->
+<article itemscope itemtype="https://schema.org/BlogPosting" itemref="dries">
+<div class="entry clearfix">
+  <header>
+        <h2 itemprop="name headline"><a href="/acquia-engage-2017-keynote"><span>Acquia Engage 2017 keynote</span>
+</a></h2>
+        <link itemprop="url" href="https://dri.es/acquia-engage-2017-keynote" />
+        <meta itemprop="description" content="The slides and video recording of my Acquia Engage presentation" />
+        <meta itemprop="datePublished" content="2017-10-31T11:29:30-04:00" />
+    <meta itemprop="dateModified" content="2017-10-31T11:31:13-04:00" />
+  </header>
+
+  <div itemprop="articleBody" class="entry__content has-meta">
+    
+            <div><p>This October, Acquia welcomed over 650 people to the fourth annual <a href="https://engage.acquia.com">Acquia Engage conference</a>. In my opening keynote, I talked about <a href="https://dri.es/the-evolution-of-acquia-product-strategy">the evolution of Acquia's product strategy</a> and the move from building websites to creating customer journeys. You can watch <a href="https://www.youtube.com/watch?v=EOr4jzKBCic">a recording of my keynote</a> (30 minutes) or <a href="http://dri.es/files/acquia-engage-keynote-2017.pdf">download a copy of my slides</a> (54 MB).</p>
+
+<p>I shared that a number of new technology trends have emerged, such as conversational interfaces, beacons, augmented reality, artificial intelligence and more. These trends give organizations the opportunity to re-imagine their customer experience.  Existing customer experiences can be leapfrogged by taking advantage of more channels and more data (e.g. be more intelligent, be more personalized, and be more contextualized).</p>   
+
+<figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+ <img itemprop="contentUrl" src="https://dri.es/files/images/blog/digital-market-trends-aligning-2017.gif" width="742" height="417" alt="Digital market trends aligning" title="Digital market trends aligning" class="image-no-resize" />
+ <link itemprop="url" href="https://dri.es/files/images/blog/digital-market-trends-aligning-2017.gif" />
+ <meta itemprop="width" content="742" />
+ <meta itemprop="height" content="417" />
+</figure>
+ 
+
+<p>I gave an example of this in a blog post last week, which showed <a href="https://dri.es/shopping-with-augmented-reality">how augmented reality can improve the shopping experience</a> and help customers make better choices. It's just one example of how these new technologies advance existing customer experiences and move our industry from <a href="https://dri.es/from-content-management-to-digital-experience-management">website management to customer journey management</a>.</p>
+
+<figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+ <img itemprop="contentUrl" src="https://dri.es/files/images/acquia/2017-market-trends.jpg" width="1484" height="818" alt="Some of the most important market trends in digital for 2017" title="2017 market trends" class="image-no-resize" />
+ <link itemprop="url" href="https://dri.es/files/images/acquia/2017-market-trends.jpg" />
+ <meta itemprop="width" content="1484" />
+ <meta itemprop="height" content="818" />
+</figure>
+
+
+<p>This is actually good news for Drupal as organizations will have to create and manage even more content. This content will need to be optimized for different channels and audience segments. However, it puts more emphasis on content modeling, <a href="https://dri.es/tag/workflow-initiative">content workflows</a>, <a href="https://dri.es/a-plan-for-media-management-in-drupal-8">media management</a> and <a href="https://dri.es/tag/web-services">web service integrations</a>.</p>
+
+<p>I believe that the transition from web content management to data-driven customer journeys is full of opportunity, and it has become clear that customers and partners are excited to take advantage of these new technology trends. This year's Acquia Engage showed how <a href="https://dri.es/the-evolution-of-acquia-product-strategy">our own transformation</a> will empower organizations to take advantage of new technology and transform how they do business.</p>
+</div>
+      
+  </div>
+      <footer class="entry__meta">
+              <div class="entry__meta__date">
+          <time datetime="2017-10-31T11:29:30-04:00"><a href="/acquia-engage-2017-keynote" class="links"><span>October 31, 2017</span></a></time>
+        </div>
+                              <div class="entry__meta__comments"><ul class="links inline"><li class="comment-add"><a href="/acquia-engage-2017-keynote#comment-form" title="Share your thoughts and opinions." hreflang="en">Add new comment</a></li></ul></div>
+                                    <div class="entry__meta__terms">
+          <ul itemprop="keywords" class="links inline">
+                                          <li><a href="/tag/acquia" hreflang="en">Acquia</a></li>
+                              <li><a href="/tag/drupal" hreflang="en">Drupal</a></li>
+                                                                                        </ul>
+        </div>
+            <ul class="entry__meta__links">
+        <li class="entry__meta__links-twitter"><a href="https://twitter.com/intent/tweet?text=Acquia%20Engage%202017%20keynote&amp;url=http%3A//dri.es/acquia-engage-2017-keynote&amp;via=dries">Share on Twitter</a></li>
+        <li class="entry__meta__links-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//dri.es/acquia-engage-2017-keynote">Share on Facebook</a></li>
+        <li class="entry__meta__links-linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&title=Acquia%20Engage%202017%20keynote&amp;url=http%3A//dri.es/acquia-engage-2017-keynote">Share on LinkedIn</a></li>
+      </ul>
+
+    </footer>  
+  
+</div>
+</article>
+
+  </div>
+    <div class="views-row">
+    <!-- Blog post with schema.org meta data -->
+<article itemscope itemtype="https://schema.org/BlogPosting" itemref="dries">
+<div class="entry clearfix">
+  <header>
+        <h2 itemprop="name headline"><a href="/shopping-with-augmented-reality"><span>Shopping with augmented reality</span>
+</a></h2>
+        <link itemprop="url" href="https://dri.es/shopping-with-augmented-reality" />
+        <meta itemprop="description" content="How we can use augmented reality with Drupal to superimpose useful information in a shopping experience" />
+        <meta itemprop="datePublished" content="2017-10-26T13:34:25-04:00" />
+    <meta itemprop="dateModified" content="2017-10-26T13:56:01-04:00" />
+  </header>
+
+  <div itemprop="articleBody" class="entry__content has-meta">
+    
+            <div><figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+ <img itemprop="contentUrl" src="https://dri.es/files/images/blog/shopping-with-augmented-reality-example-2017.jpg" width="935" height="524" alt="How augmented reality can be used to superimpose product information" title="Shopping with augmented reality" class="image-no-resize" />
+ <link itemprop="url" href="https://dri.es/files/images/blog/shopping-with-augmented-reality-example-2017.jpg" />
+ <meta itemprop="width" content="935" />
+ <meta itemprop="height" content="524" />
+</figure>
+
+
+<p>Last spring, Acquia Labs <a href="https://dri.es/think-beyond-with-acquia-labs">built a chatbot prototype</a> that helps customers choose recipes and plan shopping lists with dietary restrictions and preferences in mind. The ability to interact with a chatbot assistant rather than having to research and plan everything on your own can make grocery shopping much easier. We wanted to take this a step further and explore how augmented reality could also improve the shopping experience.</p>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ZroFBG7-P7Q" frameborder="0" allowfullscreen></iframe><br />
+
+<p>The demo video above features how a shopper named Alex can interact with an augmented reality application to <a href="https://dri.es/friduction-the-internets-unstoppable-drive-to-eliminate-friction">remove friction</a> from her shopping experience at Freshland Market (a fictional grocery store). The Freshland Market mobile application not only guides Alex through her shopping list but also helps her to make more informed shopping decisions through augmented reality overlays. It superimposes useful information such as price, user ratings and recommended recipes, over shopping items detected by a smartphone camera. The application can personalize Alex's shopping experience by highlighting products that fit her dietary restrictions or preferences.</p> 
+
+<p>What is exciting about this demo is that the Acquia Labs team built the Freshland Market application with Drupal 8 and augmented reality technology that is commercially available today.</p> 
+
+<figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+ <img itemprop="contentUrl" src="https://dri.es/files/images/blog/shopping-with-augmented-reality-architecture-2017.jpg" width="742" height="420" alt="An augmented reality architecture using Drupal and Vuforia" title="The architecture of our augmented reality demo" class="image-no-resize" />
+ <link itemprop="url" href="https://dri.es/files/images/blog/shopping-with-augmented-reality-architecture-2017.jpg" />
+ <meta itemprop="width" content="742" />
+ <meta itemprop="height" content="420" />
+</figure>
+
+
+<p>The first step in developing the application was to use an augmented reality library, <a href="https://www.vuforia.com">Vuforia</a>, which identifies pre-configured targets. In our demo, these targets are images of product labels, such as the tomato sauce and cereal labels shown in the video. Each target is given a unique ID. This ID is used to query the Freshland Market Drupal site for content related to that target.</p>
+
+<p>The Freshland Market site stores all of the product information in Drupal, including price, dietary concerns, and reviews. Thanks to <a href="https://dri.es/tag/web-services">Drupal's web services support</a> and the <a href="https://www.drupal.org/project/jsonapi">JSON API module</a>, Drupal 8 can serve content to the Freshland Market application. This means that if the Drupal content for Rosemary & Olive Oil chips is edited to mark the item on sale, this will automatically be reflected in the content superimposed through the mobile application.</p>
+
+<p>In addition to information on price and nutrition, the Freshland Market site also stores the location of each product. This makes it possible to guide a shopper to the product's location in the store, evolving the shopping list into a shopping route. This makes finding grocery items easy.</p> 
+
+<p>Augmented reality is building momentum because it moves beyond the limits of a traditional user interface, or in our case, the traditional website. It superimposes a digital layer onto a user's actual world. This technology is still emerging, and is not as established as virtual assistants and wearables, but it continues to gain traction. In 2016, the augmented reality market was valued at $2.39 billion and it is <a href="https://www.prnewswire.com/news-releases/augmented-reality-market-to-reach-613-billion-by-2023-increasing-demand-for-ar-devices--applications-in-medical-retail--e-commerce-300495971.html">expected to reach $61.39 billion by 2023</a>.</p>
+
+<p>What is exciting is that these new technology trends require content management solutions. In the featured demo, there is a large volume of product data and content that needs to be managed in order to serve the augmented reality capabilities of the Freshland Market mobile application. The Drupal community's emphasis on <a href="https://dri.es/drupal-is-api-first-not-api-only">making Drupal API-first</a> in addition to supporting distributions like <a href="https://dri.es/reservoir-a-simple-way-to-decouple-drupal">Reservoir</a> means that Drupal 8 is prepared to support emerging channels.</p> 
+
+<p>If you are ready to start reimagining how your organization interacts with its users, or how to take advantage of new technology trends, <a href="https://www.acquia.com/resources/acquia-labs">Acquia Labs is here to help</a>.</p> 
+
+<p><em>Special thanks to <a href="https://www.drupal.org/u/hampercm">Chris Hamper</a> and <a href="https://www.drupal.org/u/prestonso">Preston So</a> for building the Freshland Market augmented reality application, and thank you to <a href="https://twitter.com/burnashburn">Ash Heath</a> and Drew Robertson for producing the demo video.</em></p></div>
+      
+  </div>
+      <footer class="entry__meta">
+              <div class="entry__meta__date">
+          <time datetime="2017-10-26T13:34:25-04:00"><a href="/shopping-with-augmented-reality" class="links"><span>October 26, 2017</span></a></time>
+        </div>
+                              <div class="entry__meta__comments"><ul class="links inline"><li class="comment-comments"><a href="/shopping-with-augmented-reality#comments" title="Jump to the first comment." hreflang="en">2 comments</a></li></ul></div>
+                                    <div class="entry__meta__terms">
+          <ul itemprop="keywords" class="links inline">
+                                          <li><a href="/tag/drupal" hreflang="en">Drupal</a></li>
+                              <li><a href="/tag/the-future" hreflang="en">The future</a></li>
+                              <li><a href="/tag/augmented-reality" hreflang="en">Augmented reality</a></li>
+                              <li><a href="/tag/acquia" hreflang="en">Acquia</a></li>
+                                                                                        </ul>
+        </div>
+            <ul class="entry__meta__links">
+        <li class="entry__meta__links-twitter"><a href="https://twitter.com/intent/tweet?text=Shopping%20with%20augmented%20reality&amp;url=http%3A//dri.es/shopping-with-augmented-reality&amp;via=dries">Share on Twitter</a></li>
+        <li class="entry__meta__links-facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//dri.es/shopping-with-augmented-reality">Share on Facebook</a></li>
+        <li class="entry__meta__links-linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&title=Shopping%20with%20augmented%20reality&amp;url=http%3A//dri.es/shopping-with-augmented-reality">Share on LinkedIn</a></li>
+      </ul>
+
+    </footer>  
+  
+</div>
+</article>
+
+  </div>
+
+  
+    <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+    <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+    <ul class="pager__items js-pager__items">
+                                                        <li class="pager__item is-active">
+                                          <a href="?page=0" title="Current page">
+            <span class="visually-hidden">
+              Current page
+            </span>1</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=1" title="Go to page 2">
+            <span class="visually-hidden">
+              Page
+            </span>2</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=2" title="Go to page 3">
+            <span class="visually-hidden">
+              Page
+            </span>3</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=3" title="Go to page 4">
+            <span class="visually-hidden">
+              Page
+            </span>4</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=4" title="Go to page 5">
+            <span class="visually-hidden">
+              Page
+            </span>5</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=5" title="Go to page 6">
+            <span class="visually-hidden">
+              Page
+            </span>6</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=6" title="Go to page 7">
+            <span class="visually-hidden">
+              Page
+            </span>7</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=7" title="Go to page 8">
+            <span class="visually-hidden">
+              Page
+            </span>8</a>
+        </li>
+              <li class="pager__item">
+                                          <a href="?page=8" title="Go to page 9">
+            <span class="visually-hidden">
+              Page
+            </span>9</a>
+        </li>
+                          <li class="pager__item pager__item--ellipsis" role="presentation">&hellip;</li>
+                          <li class="pager__item pager__item--next">
+          <a href="?page=1" title="Go to next page" rel="next">
+            <span class="visually-hidden">Next page</span>
+            <span aria-hidden="true">››</span>
+          </a>
+        </li>
+                          <li class="pager__item pager__item--last">
+          <a href="?page=258" title="Go to last page">
+            <span class="visually-hidden">Last page</span>
+            <span aria-hidden="true">Last »</span>
+          </a>
+        </li>
+          </ul>
+  </nav>
+
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>  </div>
+
+<footer class="page-footer clearfix">
+  <div class="page-footer__body container">
+    <div class="page-footer__primary">
+      <form action="//buytaert.us8.list-manage.com/subscribe/post?u=eb2d2e4ce44bb8c74fdb0b23e&amp;id=ad7379819d" method="post" class="mc-embedded-subscribe-form validate" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+        <label for="ml-email" class="visually-hidden">Enter your email for updates</label>
+        <input type="email" value="" name="EMAIL" id="ml-email" class="email" placeholder="Get new posts by e-mail" required>
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_eb2d2e4ce44bb8c74fdb0b23e_ad7379819d" tabindex="-1" value=""></div>
+        <input type="submit" value="Subscribe" name="subscribe" class="button">
+      </form>
+    </div>
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person" id="dries" class="page-footer__secondary">
+
+      <ul class="page-footer__secondary__links">
+        <li class="page-footer__secondary__links-rss"><a itemprop="sameAs" href="https://dri.es/rss.xml">RSS feed</a></li>
+        <li class="page-footer__secondary__links-twitter"><a itemprop="sameAs" href="https://twitter.com/dries">Twitter</a></li>
+        <li class="page-footer__secondary__links-linkedin"><a itemprop="sameAs" href="https://linkedin.com/in/buytaert">LinkedIn</a></li>
+        <li class="page-footer__secondary__links-kiva"><a itemprop="sameAs" href="https://kiva.org/invitedby/dries">Kiva</a></li>
+      </ul>
+    </div>
+    <div class="page-footer__tertiary">
+      &copy; 1999-2017 Dries Buytaert <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.<br />Drupal is a registered trademark of Dries Buytaert.
+    </div>
+  </div>
+</footer>
+
+
+
+  </div>
+
+  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","ajaxTrustedUrl":{"\/search\/node":true},"user":{"uid":0,"permissionsHash":"ef7c431d5bf90559c4e6106c8639aae47b02147a45620aec1ddaa9190266bdc5"}}</script>
+<script src="/sites/default/files/js/js_sA4tLgx8Ef_oegEhPA3omnKdaSIIBzyF1i0vvdbKs_U.js"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"dd2e3f89a6","applicationID":"70687534","transactionName":"Y1BTYhQAXkdRV0cLDloacFUSCF9aH1BBFxFVWW5GFARvRlVaVwcTa1lYWA0S","queueTime":0,"applicationTime":372,"atts":"TxdQFFwaTUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
