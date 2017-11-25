@@ -1,10 +1,7 @@
 ---
 layout: post
-title: Sending email through mailgun and wordpress
+title: 'Sending email through mailgun wordpress plugin'
 date: '2017-11-26 16:00:00'
-tags:
-- wordpress
-- php
 ---
 
 On digitalocean with the mailgun wordpress plugin, for some weird reason it is not working even though I configured [postfix](http://www.postfix.org/).
