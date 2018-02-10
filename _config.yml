@@ -1,0 +1,20 @@
+# Site settings
+title: Joe Palala's blog
+name: Joe's blog
+url: "http://waylau.com"
+email: jose.palala@live.com
+description: blog.jpalala.com
+baseurl: "" # the subpath of your site, e.g. /blog/
+twitter_username:  jpalala # Twitter ID
+github_username:  jpalala # Github ID
+# google-analytics_id: UA-50593531-1  # Google Analytics ID
+rss_url: "/feed.xml"  # RSS 订阅 URL
+logo_image: "/images/logo.png"  # LOGO 图片地址
+# Build settings
+gems: [jekyll-paginate]
+markdown: rdiscount
+highlighter: pygments
+permalink: /:title/
+paginate: 8
+paginate_path: page/:num
+ 

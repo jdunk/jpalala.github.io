@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!--
+	 **
+	 * Author:         waylau.com
+	 * Theme Name:     jekyll-bootstrap-blog
+	 **
+	-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>柳伟卫的个人网站 Way Lau's Personal Site - 关注编程、系统架构、性能优化| waylau.com</title>
+  <meta name="description" content="柳伟卫的个人网站 Way Lau's Personal Site - 关注编程、系统架构、性能优化 | waylau.com">
+  <meta name="keywords" content="" />
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="柳伟卫的个人网站 Way Lau's Personal Site - 关注编程、系统架构、性能优化" href="http://localhost:4000/feed.xml" />
+  <link rel="stylesheet" href="/css/nprogress.css">
+  <link rel="stylesheet" href="/css/lightbox.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/highlight/agate.css">
+  <script src="/scripts/jquery-1.11.2.min.js"></script>
+
+  <script src="/scripts/highlight.pack.js"></script>
+
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+  <body>
+
+  <nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">柳伟卫的个人网站 Way Lau's Personal Site</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+        
+        
+		
+        <li><a href="/about/">About</a></li>
+        
+		
+        
+        
+		
+        <li><a href="/archive/">Archive</a></li>
+        
+		
+        
+        
+		
+        <li><a href="/categories/">Categories</a></li>
+        
+		
+        
+        
+        
+        
+		
+        <li><a href="/gallery/">Gallery</a></li>
+        
+		
+        
+        
+        
+        
+		
+        <li><a href="/books/">Books</a></li>
+        
+		
+        
+        
+        
+        
+		
+        <li><a href="/tags/">Tags</a></li>
+        
+		
+        
+        
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+        
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/sending-email-through-mailgun-wordpress-plugin/">Sending email through mailgun wordpress plugin</a>
+    </h2 >
+    2017-11-26
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <p>On digitalocean with the mailgun wordpress plugin, for some weird reason it is not working even though I configured <a href="http://www.postfix.org/">postfix</a>.</p>
+
+<p>I'm following the tutorial already through setting up a relay with these tutorials: <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-mail-relay-with-postfix-and-mailgun-on-ubuntu-16-04">How to Set Up a Mail Relay with Postfix and Mailgun on Ubuntu 16.04</a>  and  <a href="https://guides.wp-bullet.com/configure-postfix-use-mailgun-smtp-relay-ubuntu/">Configure Postfix to use Mailgun SMTP Relay on Ubuntu
+</a>.</p>
+
+<p>After setting it up, I realized it still would not pickup from that. So, I decided to use the <code>mail()</code> of PHP. The reason is that if I call <code>wp_mail()</code> in another plugin, and I do not know yet if mailgun plugin has kicked in already (that's still something I should research).</p>
+
+<p>So what happened was first try to use the default <code>mail()</code> function, then if it still fails (<code>$result = false</code>) then try <code>wp_mail()</code> (which I do not know if mailgun plugin already over-rode).</p>
+
+<p>My next step to make it more elegant is to actually put Mailgun's latest class through composer and use <a href="https://roots.io/bedrock/">Bedrock</a> so wordpress is using <a href="https://getcomposer.org/">composer</a>.</p>
+
+    <div class="readall"><a href="/sending-email-through-mailgun-wordpress-plugin/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/jekyll-bootstrap-blog-update-exclude-page/">Jekyll 博客主题 jekyll-bootstrap-blog 更新，支持页面不在导航显示</a>
+    </h2 >
+    2016-12-03
+    <i class="fa fa-file"></i>
+    
+    <a href="/categories/#Blog">Blog</a>
+    
+    <a href="/categories/#Jekyll">Jekyll</a>
+    
+    </p>
+
+  <div class="post-main">
+    <h2>New Features and Enhancements</h2>
+
+<p>Todey, <code>jekyll-bootstrap-blog</code> add an enhancement, that pages can excluded from top bar nav(See https://github.com/waylau/jekyll-bootstrap-blog/issues/3). It's very uesful to hide the page, but you can still visit it derictly by page's url.</p>
+
+
+    <div class="readall"><a href="/jekyll-bootstrap-blog-update-exclude-page/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/org-mode/">Org-mode</a>
+    </h2 >
+    2016-05-12
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <p>http://orgmode.org/worg/org-tutorials/org4beginners.html</p>
+
+<p>http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html</p>
+
+<p>https://www.youtube.com/watch?v=bzZ09dAbLEE</p>
+
+    <div class="readall"><a href="/org-mode/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/learning-magit/">Learning magit</a>
+    </h2 >
+    2016-03-18
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <p>I attended a recent Javascript meetup where <a href="https://twitter.com/zakame">Zak</a> showed us the power of using <a href="https://www.gnu.org/software/emacs/">emacs</a> for javascript.</p>
+
+<p>For me, other than note taking, the thing I like to really learn is using the emacs <a href="https://www.emacswiki.org/emacs/Magit">magit plugin</a>. To get it installed in a cinch, I did <code>brew install magit</code>. Yes, I am lazy and <a href="http://brew.sh/">brew</a> is amazing. Also note that I also got the emacs from brew as well, btw.</p>
+
+<p>One thing I struggled a bit was intalling other plugins. After getting the <a href="http://ergoemacs.org/emacs/emacs_package_system.html">melpa</a> repo wired in to emacs, it was a simple <code>M-x list-packages</code> and then <code>Ctrl-s magit</code> (which searches for magit) then pressing i (mark install) and x (execute).</p>
+
+<p>So for my first thing to try, I went to my dotfiles repo and tried to commit something new. After opening a file using <code>$ emacs &lt;filename&gt;</code>, I just typed <code>M-x magit-</code> and pressed TAB. I found the command to use: <code>M-x magit-commit</code> and then typed my commit message. Then, to finish up the commit and actually commit, I typed <code>C-c C-c</code>. And it was commited.</p>
+
+<p>Since I was on master and will push to master, I just did <code>M-x magit-push-popup</code> and then pressed P.</p>
+
+<p>Well magit was  easier than I thought it was. Hope it was a nice introduction to using magit.</p>
+
+<p>I'm pretty sure I'm just touching the tip of the iceberg of what it can do, will keep posting new learnings about using magit as I go along.</p>
+
+    <div class="readall"><a href="/learning-magit/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/much-fun-with-git-alias/">Much fun with git alias</a>
+    </h2 >
+    2016-03-17
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">alias such=git<br>alias very=git<br>alias wow=&#39;git status&#39; <br><br>$ wow<br>$ such commit<br>$ very push</p>&mdash; Chris Martin (@chris__martin) <a href="https://twitter.com/chris__martin/status/420992421673988096">January 8, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+    <div class="readall"><a href="/much-fun-with-git-alias/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/life-snapshot-q1-2016/">Life snapshot Q1 2016</a>
+    </h2 >
+    2016-03-15
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <h2>What I'm studying</h2>
+
+<ul>
+<li>Figuring things out with front-end tools (ES6/Babel/React)</li>
+<li>Checking out PHP7</li>
+</ul>
+
+
+<h2>Moments</h2>
+
+<ul>
+<li>Venice Piazza Mall is almost finished</li>
+<li>Team building to Balagbag</li>
+<li>Discovered Salad Lunches at Rustans Fresh Foods</li>
+<li>Finally tried to swim again at the Gym</li>
+</ul>
+
+
+<p>[...]</p>
+
+    <div class="readall"><a href="/life-snapshot-q1-2016/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/make-npm3-look-like-npm2/">make npm3 install look like npm2</a>
+    </h2 >
+    2016-03-08
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <p>Got this tip from a friend - <a href="http://ricostacruz.com/">rico sta. cruz</a>:</p>
+
+<p>Just set the config to use <code>loglevel http</code> and not show the progress bar <code>progress false</code> and you're good to go.</p>
+
+<p><code>npm config set loglevel http &amp;&amp; npm config set progress false</code></p>
+
+    <div class="readall"><a href="/make-npm3-look-like-npm2/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+<article class="post tag-lumen tag-wei-kuang-jia">
+
+    <h2 class="post-title">
+      <a class="post-link" href="/til/">[TIL] defaults and extends work together</a>
+    </h2 >
+    2016-02-09
+    <i class="fa fa-file"></i>
+    
+    </p>
+
+  <div class="post-main">
+    <p>So today I just discovered the <code>_.extends</code> function of underscore. There's a little known function that is similar, called <code>_.extendsOwn</code>. This basically is the underscore version for the upcoming 'Object.assign' method of ES6.</p>
+
+<p>I didn't like how javascript mutates objects and doesn't make the code any easier to understand. So in a function I was creating that originally mutates to object without returning anything, I needed a way to copy the object and modify it, then return it back. One way to do that is to get copy the object to another variable, completely and without reference to the original object that got passed in. So that's what led me to figure out how to use <a href="http://underscorejs.org/#extend">extend</a> and decided on using <a href="http://underscorejs.org/#extendOwn">extendOwn</a></p>
+
+<p>Long story cut short - I wanted more info about these functions which led me to this article:</p>
+
+<p><a href="https://lostechies.com/chrismissal/2012/10/05/extending-objects-in-underscore/">Extending objects in underscore</a></p>
+
+<p>There's this method that is very similar to extend, called <code>_.defaults</code> that is really useful. Imagine you have an existing object that you dont want certain properties (and their values) to be overwritten when merging other objects into it. That's what defaults are for basically. Any present values in the existing object wont get overwritten by other object's attributes.</p>
+
+<p>The use cases are for the times that you want to exclude certain properties when merging together objects.  One application is pushing data to an incrementing indexing NoSQL database that absolutely must have the same <strong>identifier</strong> in the JSON message, to be able to search for it later.</p>
+
+<p>So cool. For more info on extend, checkout this <a href="http://www.2ality.com/2012/08/underscore-extend.html">2ality article</a></p>
+
+    <div class="readall"><a href="/til/" >More<i class="fa fa-chevron-right"></i></a></div>
+  </div>
+</article>
+<hr/>
+
+
+
+
+<!-- Pagination links -->
+
+<div class="pagination">
+  
+  <span class="pagination-item newer"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Previous</span>
+  
+
+  
+  <span class="current-page">1</span>
+  
+
+  
+  
+  <a href="/page/2">2</a>
+  
+  
+  (Total 14)
+
+  
+  <a class="pagination-item older" href="/page/2">Next&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+  
+</div>
+       </div>
+
+      <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        
+
+  <div class="row">
+	<img alt="" class="avatar"  src="/images/logo.png"  >
+    <div >
+      <h4>Way Lau</h4>
+      <p>A <em>Software Engineer</em> and <em>Full Stack Developer.</em>Now work and live in  Huizhou, Guangdong, China.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <h4>Contact</h4>
+    <ul >
+      
+      <li>
+        <a href="mailto:waylau521@gmail.com">
+          <i class="fa fa-envelope"></i>
+          <span class="username">waylau521@gmail.com</span>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="http://weibo.com/waylau521">
+          <i class="fa fa-weibo"></i>
+          <span class="username">waylau521</span>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a href="https://github.com/waylau">
+          <i class="fa fa-github"></i>
+          <span class="username">waylau</span>
+        </a>
+      </li>
+      
+
+      
+      <li>
+        <a href="https://twitter.com/waylau521">
+          <i class="fa fa-twitter"></i>
+          <span class="username">waylau521</span>
+        </a>
+      </li>
+      
+
+	  
+      <li>
+        <a href="https://facebook.com/waylau521">
+          <i class="fa fa-facebook"></i>
+          <span class="username">waylau521</span>
+        </a>
+      </li>
+      
+
+
+      
+      <li>
+        <a href="/feed.xml">
+          <i class="fa fa-rss"></i>
+          <span class="username"> RSS</span></a>
+      </li>
+      
+    </ul>
+  </div>
+  <!--
+  <div class="row">
+  <h4>Categories</h4>
+    
+
+
+<div class="category-box">
+    <ul>
+        
+        
+        <li class="category-box-sub"><a href="#Blog">Blog&nbsp;<sup>5</sup></a></li>
+        
+        
+        <li class="category-box-sub"><a href="#Jekyll">Jekyll&nbsp;<sup>5</sup></a></li>
+        
+    </ul>
+</div>
+
+  </div>
+
+  <div class="row">
+    <h4>Tags</h4>
+    
+
+<div id='tag_cloud'>
+    
+    <a href="#Blog" title="Blog" rel="5">Blog</a>
+    
+    <a href="#Jekyll" title="Jekyll" rel="5">Jekyll</a>
+    
+    <a href="#jekyll-theme-blog" title="jekyll-theme-blog" rel="1">jekyll-theme-blog</a>
+    
+    <a href="#jekyll-bootstrap-blog" title="jekyll-bootstrap-blog" rel="4">jekyll-bootstrap-blog</a>
+    
+</div>
+<script src="/scripts/jquery.tagcloud.js" ></script>
+<script >
+    var jq = jQuery.noConflict();
+
+    jq.fn.tagcloud.defaults = {
+        size: {
+            start: 12,
+            end: 22,
+            unit: 'px'
+        },
+        color: {
+            start: '#F01F00', end: '#C2AF22'
+        }
+    };
+
+    jq(function() {
+        jq('#tag_cloud a').tagcloud();
+    });
+</script>
+  </div>
+-->
+  <div class="row">
+    <h4>Latest Comments</h4>
+    <ul class="ds-recent-comments" data-num-items="10" data-show-avatars="0" data-show-time="0" data-show-title="0" data-show-admin="0" data-excerpt-length="18"></ul>
+  </div>
+  <div class="row">
+    <h4>Recently Visitors</h4>
+    <ul class="ds-recent-visitors" data-num-items="16" data-avatar-size="45" style="margin-top:10px;"></ul>
+  </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+  
+<footer class="footer">
+    <div class="container">
+        <div> Code licensed under <a rel="license" href="LICENSE">MIT</a>,documentation under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">CC BY-NC-SA 3.0 CN</a></div>
+         <div>Copyright&nbsp;&copy;&nbsp;2009-2018 <a href="http://localhost:4000">柳伟卫的个人网站 Way Lau's Personal Site</a><br/></div>
+        <div>Powered by <a href="https://github.com/waylau/jekyll-bootstrap-blog" target="_blank">jekyll-bootstrap-blog</a></div>
+    </div>
+</footer>
+
+  <a id="goToTop" href="#">
+    <i class="fa fa-chevron-up fa-3x"></i>
+  </a>
+
+</body>
+
+<script src="/scripts/jquery-1.11.2.min.js"></script>
+<script src="/scripts/nprogress.js"></script>
+<script src="/scripts/bootstrap.min.js"></script>
+<script src="/scripts/main.js" ></script>
+
+<script>
+  var duoshuoQuery = {short_name:"waylau"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?28cf5fa48a599e39c5cc760931de942f";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', UA-50593531-1, 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</html>
