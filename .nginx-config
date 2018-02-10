@@ -1,0 +1,60 @@
+server {
+	listen 80;
+	server_name blog.jpalala.com;
+	root /opt/sites/blog.jpalala.com/public;
+	index index.html index.htm;
+
+	access_log /var/log/nginx/blog.jpalala.com_access.log;
+	error_log /var/log/nginx/blog.jpalala.com_error.log;
+
+	#location / {
+	#		try_files $uri $uri/ =404;
+	# }
+
+	error_page 404 /404.html;
+	error_page 500 502 503 504 /50x.html;
+	
+	default_type "text/html";
+	try_files  $uri $uri.html $uri/index.html index.html;
+	autoindex off;
+	
+	location ~* \.(?:css|gif|htc|ico|js|jpe?g|png|swf)$ {
+	    expires max;
+	    log_not_found off;
+	    tcp_nodelay off;
+	    open_file_cache max=1000 inactive=120s;
+	    open_file_cache_valid 45s;
+	    open_file_cache_min_uses 2;
+	    open_file_cache_errors off;
+	}
+
+
+        location ~* ^.*(\.(?:git|svn|htaccess|pot?))$ {
+            return 404;
+        }
+
+	location = /50x.html {
+		root /usr/share/nginx/html;
+	}
+
+
+	error_page 404 /404.html;
+
+	location = /50x.html {
+		root /usr/share/nginx/html;
+	}
+
+	## If no favicon exists return a 204 (no content error).
+	location = /favicon.ico {
+	  try_files $uri =204;
+	  log_not_found off;
+	  access_log off;
+	}
+
+	## Don't log robots.txt requests.
+	location = /robots.txt {
+		allow all;
+		log_not_found off;
+		access_log off;
+	}
+}
