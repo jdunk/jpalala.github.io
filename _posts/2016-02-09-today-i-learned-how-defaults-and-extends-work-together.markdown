@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[TIL] defaults and extends work together'
+title: 'today i learned how _.defaults and _.extends work together'
 date: '2016-02-09 06:44:32'
 ---
 
