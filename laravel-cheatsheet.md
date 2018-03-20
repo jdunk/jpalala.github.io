@@ -1,5 +1,5 @@
 
-Laravle Cheatsheet
+Laravel Cheatsheet
 ====
 
 Artisan commands
@@ -17,7 +17,7 @@ Create a controller:
 
 `php artisan make:controller TodoController`
 
-Create a model and migration : 
+Create a model and migration: 
 
 `php artisan make model Todo -m`
 
